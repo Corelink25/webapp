@@ -1,0 +1,10 @@
+services:
+  mysql:
+    image: 'mysql:latest'
+    environment:
+      - 'MYSQL_DATABASE=cornerstone_db'
+      - 'MYSQL_USER=appuser'
+      - 'MYSQL_PASSWORD=apppass'
+      - 'MYSQL_ROOT_PASSWORD=pass123'
+    ports:
+      - '3306:3306'
