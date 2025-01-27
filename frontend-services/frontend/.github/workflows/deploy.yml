@@ -2,10 +2,16 @@ name: Deploy React to cPanel
 on:
   push:
     branches: [feature/development]
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
     
     steps:
       - uses: actions/checkout@v3
@@ -13,7 +19,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # or your preferred Node version
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
           
       - name: Install Dependencies
         run: npm install
