@@ -1,0 +1,42 @@
+name: Deploy React to cPanel
+on:
+  push:
+    branches: [feature/development]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # or your preferred Node version
+          
+      - name: Install Dependencies
+        run: npm install
+        
+      - name: Build React App
+        run: npm run build
+        env:
+          CI: false  # In case there are warnings treated as errors
+          
+      - name: Install cPanel Deploy Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp
+          
+      - name: Deploy to cPanel
+        env:
+          CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
+          CPANEL_USERNAME: ${{ secrets.CPANEL_USERNAME }}
+          CPANEL_PASSWORD: ${{ secrets.CPANEL_PASSWORD }}
+          CPANEL_DOMAIN: ${{ secrets.CPANEL_DOMAIN }}
+        run: |
+          lftp -c "
+          set ssl:verify-certificate no;
+          open ftp://$CPANEL_USERNAME:$CPANEL_PASSWORD@$CPANEL_HOST;
+          mirror -R build/ public_html/;
+          quit"
