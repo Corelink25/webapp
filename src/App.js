@@ -4,11 +4,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
+import Home from "./components/HomePage";
 import About from "./components/About";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
-import Products from "./components/Products";
 
 const App = () => {
   return (
@@ -19,7 +18,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/products" element={<Products />} />
+        {/* <Route path="/products" element={<Products />} /> */}
       </Routes>
       <Footer />
     </Router>

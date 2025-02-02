@@ -1,6 +1,5 @@
-// export default Products;
 import React, { useState } from "react";
-import "../Products.css";
+import "../styles/Products.css";
 
 const CategoryDisplay = ({ products }) => {
   return (
@@ -75,25 +74,7 @@ const Products = () => {
         ))}
       </nav>
       <div className="container">
-        {activeCategory === "ladiesHairAndCosmetics" ? (
-          <CategoryDisplay products={categorizedProducts[activeCategory]} />
-        ) : (
-          <div className="row">
-            {categorizedProducts[activeCategory].map((product) => (
-              <div key={product.id} className="col-md-4 col-sm-6 mb-4">
-                <div className="card h-100">
-                  <img src={product.image} alt={product.name} className="card-img-top product-image" style={{ objectFit: 'cover', height: '350px' }} />
-                  <div className="card-body">
-                    <h5 className="card-title">{product.name}</h5>
-                    <p className="card-text">Brand: {product.brand}</p>
-                    <p className="card-text">Price: ${product.price.toFixed(2)}</p>
-                    <button className="btn btn-primary">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+        <CategoryDisplay products={categorizedProducts[activeCategory]} />
       </div>
     </div>
   );

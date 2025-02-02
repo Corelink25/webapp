@@ -1,30 +1,14 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-
-// const Navbar = () => {
-//   return (
-//     <nav>
-//       <ul>
-//         <li><Link to="/">Home</Link></li>
-//         <li><Link to="/about">About</Link></li>
-//         <li><Link to="/services">Services</Link></li>
-//         <li><Link to="/contact">Contact</Link></li>
-//       </ul>
-//     </nav>
-//   );
-// };
-
 // export default Navbar;
 import React from "react";
 import { Link } from "react-router-dom";
-import "../Navbar.css";
+import "../styles/Navbar.css";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-body">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          Cornerstone Version Services
+          Cornerstone Vision Services
         </Link>
         <button
           className="navbar-toggler"
@@ -42,23 +26,18 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">
-                About
-              </Link>
-            </li>
-            <li className="nav-item">
               <Link className="nav-link" to="/services">
                 Services
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">
-                Contact
+              <Link className="nav-link" to="/about">
+                About
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/products">
-                Products
+              <Link className="nav-link" to="/contact">
+                JoinUs
               </Link>
             </li>
           </ul>

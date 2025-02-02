@@ -1,59 +1,13 @@
-// import React, { useState } from "react";
-
-// const Contact = () => {
-//   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData({ ...formData, [name]: value });
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     const response = await fetch("http://localhost:8080/api/contacts", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify(formData),
-//     });
-  
-//     if (response.ok) {
-//       alert("Message sent successfully!");
-//     } else {
-//       alert("Failed to send message.");
-//     }
-//   };
-  
-
-//   return (
-//     <section>
-//       <h2>Contact Us</h2>
-//       <form onSubmit={handleSubmit}>
-//         <label>
-//           Name:
-//           <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-//         </label>
-//         <label>
-//           Email:
-//           <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-//         </label>
-//         <label>
-//           Message:
-//           <textarea name="message" value={formData.message} onChange={handleChange} required></textarea>
-//         </label>
-//         <button type="submit">Send</button>
-//       </form>
-//     </section>
-//   );
-// };
-
-// export default Contact;
+import "../styles/Contact.css";
 import React, { useState } from "react";
-import "../Contact.css";
+import "../styles/Contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    industry: "",
+    company: "",
     message: "",
   });
 
@@ -64,12 +18,39 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Your message has been sent successfully!");
+    const form = e.target;
+    fetch("https://formsubmit.co/ajax/cornerstone.vision.services@gmail.com", {
+      method: "POST",
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert("Your message has been sent successfully!");
+        form.reset();
+        setFormData({
+          name: "",
+          email: "",
+          industry: "",
+          company: "",
+          message: "",
+        });
+      } else {
+        alert("There was an error sending your message. Please try again.");
+      }
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("There was an error sending your message. Please try again.");
+    });
   };
-
   return (
     <div className="container mt-5">
-      <h2 className="text-center mb-4">Contact Us</h2>
+      <h2 className="text-center mb-4">Partner With Us</h2>
       <form onSubmit={handleSubmit} className="contact-form">
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
@@ -95,6 +76,33 @@ const Contact = () => {
             id="email"
             name="email"
             value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="Industry" className="form-label">
+            Industry
+          </label>
+          <select class="form-select" aria-label="Multiple select example">
+          <option value="" disabled selected>Select an option</option>
+            <option value="1">Health</option>
+            <option value="2">Households</option>
+            <option value="3">Cosmetics</option>
+            <option value="4">Fashion</option>
+            <option value="34">Technology</option>
+          </select>
+        </div>
+        <div className="mb-3">
+          <label htmlFor="Company" className="form-label">
+            Company Name
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="company"
+            name="company"
+            value={formData.company}
             onChange={handleChange}
             required
           />
