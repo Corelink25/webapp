@@ -36,7 +36,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://wa.me/00447480940409" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "none" }}>
+                  <a href="https://wa.me/00447349940873" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "none" }}>
                     <img src="/whatsapp_logo.png" alt="" style={{ width: "24px", height: "24px", verticalAlign: "middle" }} /> WhatsApp
                   </a>
                 </li>
@@ -51,7 +51,7 @@ const Footer = () => {
           <div>
             <ul>
               <li>
-              <a href="https://find-and-update.company-information.service.gov.uk/company/16155793" target="_blank" rel="noopener noreferrer" style={{ color: "#fff", textDecoration: "none" }}>
+              <a href="https://find-and-update.company-information.service.gov.uk/company/16127370" target="_blank" rel="noopener noreferrer" style={{ color: "#fff", textDecoration: "none" }}>
                   <img src="/CompaniesHouse.png" alt="" style={{ width: "50px", height: "50px", verticalAlign: "middle", color: "white" }} />Companies House
                 </a>
               </li>
