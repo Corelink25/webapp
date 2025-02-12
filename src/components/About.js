@@ -27,7 +27,7 @@ const About = () => {
         <div className="about-section">
           <h3>Who We Are</h3>
           <p>
-            Welcome to Cornerstone Vision Services, your trusted partner in delivering high-quality branded products to customers and online shopping platforms worldwide. We specialize in sourcing premium products from reputable wholesalers and distributing them to a diverse network of customers, including individual shoppers, e-commerce platforms, and retail partners.
+            Welcome to CoreLink Solutions, your trusted partner in delivering high-quality branded products to customers and online shopping platforms worldwide. We specialize in sourcing premium products from reputable wholesalers and distributing them to a diverse network of customers, including individual shoppers, e-commerce platforms, and retail partners.
           </p>
         </div>
 
@@ -38,7 +38,7 @@ const About = () => {
           </h3>
           {expandedSections.mission && (
             <p>
-              At Cornerstone Vision Services, our mission is to connect customers with the best quality products while providing suppliers with a reliable platform to grow their brand presence. We are committed to excellence, innovation, and building lasting partnerships that benefit everyone involved.
+              At CoreLink Solutions, our mission is to connect customers with the best quality products while providing suppliers with a reliable platform to grow their brand presence. We are committed to excellence, innovation, and building lasting partnerships that benefit everyone involved.
             </p>
           )}
         </div>
