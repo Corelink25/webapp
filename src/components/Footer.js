@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="footer-container">
         {/* Branding Section */}
         <div className="footer-branding">
-          <h1 style={{ color: "cyan" }}>Cornerstone Vision</h1>
+          <h1 style={{ color: "cyan" }}>CoreLink Solutions</h1>
           <p>Bringing Top Brands to Your Fingertips – Shop the Best, Anytime, Anywhere!</p>
         </div>
 
@@ -31,12 +31,12 @@ const Footer = () => {
               <h3>Contact Us</h3>
               <ul>
                 <li>
-                  <a href="mailto:info@cornerstonevision.com" style={{ color: "#fff", textDecoration: "none" }}>
-                    E: info@cornerstonevision.com
+                  <a href="mailto:admin@corelinksolutions.co.uk" style={{ color: "#fff", textDecoration: "none" }}>
+                    E: admin@corelinksolutions.co.uk
                   </a>
                 </li>
                 <li>
-                  <a href="https://wa.me/00447480940409" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "none" }}>
+                  <a href="https://wa.me/+447349940873" target="_blank" rel="noopener noreferrer" style={{ color: "white", textDecoration: "none" }}>
                     <img src="/whatsapp_logo.png" alt="" style={{ width: "24px", height: "24px", verticalAlign: "middle" }} /> WhatsApp
                   </a>
                 </li>
@@ -51,13 +51,13 @@ const Footer = () => {
           <div>
             <ul>
               <li>
-              <a href="https://find-and-update.company-information.service.gov.uk/company/16155793" target="_blank" rel="noopener noreferrer" style={{ color: "#fff", textDecoration: "none" }}>
+              <a href="https://find-and-update.company-information.service.gov.uk/company/16127370" target="_blank" rel="noopener noreferrer" style={{ color: "#fff", textDecoration: "none" }}>
                   <img src="/CompaniesHouse.png" alt="" style={{ width: "50px", height: "50px", verticalAlign: "middle", color: "white" }} />Companies House
                 </a>
               </li>
               <li>
                 <h6>Registered Addres:<br />
-                  111 New Union Street, Coventry, United Kingdom, CV1 2NT</h6>
+                  124 City Road, London. EC1V 2NX</h6>
               </li>
             </ul>
           </div>
