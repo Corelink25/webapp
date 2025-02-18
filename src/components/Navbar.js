@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-body">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          Cornerstone Vision Services
+          CoreLink Solutions..
         </Link>
         <button
           className="navbar-toggler"
