@@ -1,0 +1,10 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/example/public_html/
+    - /bin/cp -R build/static $DEPLOYPATH
+    - /bin/cp -R build/*.txt $DEPLOYPATH
+    - /bin/cp -R build/*.json $DEPLOYPATH
+    - /bin/cp build/*.html $DEPLOYPATH
+    - /bin/cp build/*.ico $DEPLOYPATH
+    - /bin/cp build/*.png $DEPLOYPATH
